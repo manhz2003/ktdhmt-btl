@@ -14,7 +14,6 @@ export default class CoffeeSteam
         this.scene = this.experience.scene
         this.time = this.experience.time
 
-        // Debug
         if(this.debug)
         {
             this.debugFolder = this.debug.addFolder({
@@ -98,24 +97,6 @@ export default class CoffeeSteam
 
             this.debugFolder
                 .addInput(
-                    this.model.material.uniforms.uNeutralMix,
-                    'value',
-                    { label: 'uNeutralMix', min: 0, max: 1 }
-                )
-
-            this.debugFolder
-                .addInput(
-                    this.colors,
-                    'tv',
-                    { view: 'color' }
-                )
-                .on('change', () =>
-                {
-                    this.model.material.uniforms.uLightTvColor.value.set(this.colors.tv)
-                })
-
-            this.debugFolder
-                .addInput(
                     this.model.material.uniforms.uLightTvStrength,
                     'value',
                     { label: 'uLightTvStrength', min: 0, max: 3 }
@@ -123,32 +104,10 @@ export default class CoffeeSteam
 
             this.debugFolder
                 .addInput(
-                    this.colors,
-                    'desk',
-                    { view: 'color' }
-                )
-                .on('change', () =>
-                {
-                    this.model.material.uniforms.uLightDeskColor.value.set(this.colors.desk)
-                })
-
-            this.debugFolder
-                .addInput(
                     this.model.material.uniforms.uLightDeskStrength,
                     'value',
                     { label: 'uLightDeskStrength', min: 0, max: 3 }
                 )
-
-            this.debugFolder
-                .addInput(
-                    this.colors,
-                    'pc',
-                    { view: 'color' }
-                )
-                .on('change', () =>
-                {
-                    this.model.material.uniforms.uLightPcColor.value.set(this.colors.pc)
-                })
 
             this.debugFolder
                 .addInput(

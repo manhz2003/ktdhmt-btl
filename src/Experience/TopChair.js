@@ -14,6 +14,9 @@ export default class TopChair
         this.time = this.experience.time
 
         this.setModel()
+
+        // dịch chuyển vị trí của ghế
+        // this.model.group.position.set(1, 1, 1);
     }
 
     setModel()
