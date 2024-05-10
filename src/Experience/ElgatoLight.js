@@ -18,9 +18,12 @@ export default class ElgatoLight
         this.model = {}
 
         this.model.mesh = this.resources.items.elgatoLightModel.scene.children[0]
+        // dịch chuyển vị trí của đèn trên màn hình
+        // this.model.mesh.position.set(1, 2, 1);
         this.scene.add(this.model.mesh)
 
         this.model.mesh.material = new THREE.MeshBasicMaterial({
+            // màu sắc của đèn trên màn hình máy tính
             color: 0xffffff
         })
     }

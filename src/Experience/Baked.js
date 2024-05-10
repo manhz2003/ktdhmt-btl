@@ -59,9 +59,8 @@ export default class CoffeeSteam
                 uBakedNeutralTexture: { value: this.model.bakedNeutralTexture },
                 uLightMapTexture: { value: this.model.lightMapTexture },
 
+                // độ sáng mặc định, value dùng để tăng giảm độ sáng của các nguồn sáng
                 uNightMix: { value: 1 },
-                uNeutralMix: { value: 0 },
-
                 uLightTvColor: { value: new THREE.Color(this.colors.tv) },
                 uLightTvStrength: { value: 1.47 },
 
@@ -71,6 +70,7 @@ export default class CoffeeSteam
                 uLightPcColor: { value: new THREE.Color(this.colors.pc) },
                 uLightPcStrength: { value: 1.4 }
             },
+            
             vertexShader: vertexShader,
             fragmentShader: fragmentShader
         })
@@ -86,6 +86,8 @@ export default class CoffeeSteam
         this.scene.add(this.model.mesh)
         
         // Debug
+
+        // thay đổi độ sáng min max của các nguồn sáng
         if(this.debug)
         {
             this.debugFolder
@@ -99,7 +101,7 @@ export default class CoffeeSteam
                 .addInput(
                     this.model.material.uniforms.uLightTvStrength,
                     'value',
-                    { label: 'uLightTvStrength', min: 0, max: 3 }
+                    { label: 'uLightTvStrength', min: 0, max: 5 }
                 )
 
             this.debugFolder

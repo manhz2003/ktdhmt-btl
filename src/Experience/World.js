@@ -45,10 +45,17 @@ export default class World
             this.resources.items.pcScreenModel.scene.children[0],
             '/assets/videoPortfolio.mp4'
         )
+
+        // dịch chuyển vị trí màn pc
+        // this.pcScreen.move(1, 0, 0);
+    
         this.macScreen = new Screen(
             this.resources.items.macScreenModel.scene.children[0],
             '/assets/videoStream.mp4'
         )
+
+        // dịch chuyển vị trí màn mac
+        // this.macScreen.move(1, 1, 0); 
     }
 
     update()

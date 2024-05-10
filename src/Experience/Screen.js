@@ -11,11 +11,11 @@ export default class Screen
         this.debug = this.experience.debug
         this.scene = this.experience.scene
         this.world = this.experience.world
-
         this.mesh = _mesh
         this.sourcePath = _sourcePath
-
         this.setModel()
+
+        
     }
 
     setModel()
@@ -47,8 +47,7 @@ export default class Screen
         this.scene.add(this.model.mesh)
     }
 
-    update()
-    {
-        // this.model.group.rotation.y = Math.sin(this.time.elapsed * 0.0005) * 0.5
+    move(x, y, z) {
+        this.model.mesh.position.set(x, y, z);
     }
 }
